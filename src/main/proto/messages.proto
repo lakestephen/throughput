@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+//package tutorial;
+
+option java_package = "com.concurrentperformance.throughput.transport";
+option java_outer_classname = "Messages";
+
+message MSG {
+
+
+  enum Type {
+    IDENTITY = 0;
+    REQUEST = 1;
+    RESPONSE = 2;
+  }
+
+  Type type = 1;
+  string identityName = 2;
+  int64 dataspaceId = 3;
+  int64 dataspaceSizeBytes = 4;
+  bytes values = 5;
+
+}
